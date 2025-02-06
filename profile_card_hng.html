@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile Card - Henry Elue</title>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background-color: #f9f9f9;
+    }
+
+    .profile-card {
+      background: white;
+      border-radius: 16px;
+      padding: 20px;
+      width: 320px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .profile-picture {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .full-name {
+      font-size: 1.5em;
+      margin-top: 10px;
+      color: #333;
+    }
+
+    .job-title {
+      font-size: 1.2em;
+      color: #666;
+      margin: 5px 0;
+    }
+
+    .short-bio {
+      font-size: 0.95em;
+      color: #555;
+      margin: 10px 0;
+    }
+
+    .location,
+    .email {
+      margin: 8px 0;
+      color: #666;
+    }
+
+    .social-links a {
+      margin: 0 10px;
+      color: #0077b5;
+      text-decoration: none;
+    }
+
+    .social-links a:hover {
+      text-decoration: underline;
+    }
+
+    .current-time {
+      margin-top: 15px;
+      font-size: 0.9em;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <div class="profile-card">
+    <img src="https://via.placeholder.com/120" alt="Profile Picture" class="profile-picture" data-testid="profilePicture">
+    <div class="full-name" data-testid="fullName">Henry Elue</div>
+    <div class="job-title" data-testid="jobTitle">Frontend Developer</div>
+    <div class="short-bio" data-testid="shortBio">
+      I am familiar with JS and Python for scripting and task automation. A passionate tech enthusiast transitioning from Network Engineering into Frontend Development. Eager to bring problem-solving skills to create engaging user experiences and dynamic web solutions.
+      My motivation stems from the desire to build intuitive user interfaces that enhance user experiences. Frontend development presents an exciting opportunity to merge creativity with problem-solving.
+      The HNG internship offers a structured environment to hone my frontend development skills. The mentorship, tasks, and collaborative opportunities will help me gain hands-on experience, improve my technical skills, and connect with industry professionals.
+    </div>
+    <div class="location" data-testid="currentLocation">Lagos, Nigeria</div>
+    <div class="email" data-testid="emailAddress">henryelue@gmail.com</div>
+    <div class="social-links" data-testid="socialLinks">
+      <a href="https://www.linkedin.com/in/henryelue" target="_blank">LinkedIn</a>
+      <a href="https://github.com/henryelue" target="_blank">GitHub</a>
+      <a href="https://twitter.com/henryelue" target="_blank">Twitter</a>
+    </div>
+    <div class="current-time" data-testid="currentTimeUTC">UTC Time: <span id="utc-time"></span></div>
+  </div>
+
+  <script>
+    function updateUTCTime() {
+      const utcTimeElement = document.getElementById("utc-time");
+      const now = new Date();
+      utcTimeElement.textContent = now.toUTCString();
+    }
+
+    updateUTCTime();
+  </script>
+</body>
+</html>
